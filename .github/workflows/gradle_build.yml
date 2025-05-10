@@ -33,18 +33,6 @@ jobs:
     - name: Remove *-dev.jar
       run: rm ./build/libs/*-dev.jar || true
 
-    - name: Archive Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: Artifacts
-        path: dist/
-
-    - name: Archive mapping.txt
-      uses: actions/upload-artifact@v3
-      with:
-        name: Mappings
-        path: build/tmp/proguard/mapping.txt
-
     - name: Create Release
       uses: marvinpinto/action-automatic-releases@latest
       with:
